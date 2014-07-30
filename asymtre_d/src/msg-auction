@@ -1,0 +1,52 @@
+---------------------
+1. task announcement
+T$push$5$1$270$2$12$3$10!  
+
+task_name: push
+box: (x, y, ori): (5, 1, 270)
+numrobot: 2
+timeofarr: 12
+goal: (x, y): (3, 10)
+
+------------------
+2. bid submission
+B5$2$56$57! 
+
+coalition cost: 5
+number of robots in coalition: 2
+leader ID: 56
+coalition members: 56 57
+
+------------------------
+3. winner determination
+W2$56$57!
+
+number of robots in coalition: 2
+leader ID: 56
+coalition members: 56 57
+
+--------------------
+4. award acceptance
+A56!
+
+leader 56 confirms
+
+-------------------
+5. task completion
+P12!
+
+The "push" task arrived at 12 is completed
+
+-------------------------------------------------
+6. broadcast my position to the coalition members
+#56$5$4!
+
+robot 56's current position is (5, 4)
+
+------------------
+7. end of auction
+Z
+
+-----------------------------
+8. synchronize starting time
+S12311231

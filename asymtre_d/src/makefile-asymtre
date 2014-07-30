@@ -1,0 +1,18 @@
+EXECUTABLES = reason
+INCLUDES = -I../include/
+CFLAGS = -g $(INCLUDES)
+CC = gcc
+LIBDIR = ../lib
+LIBS = $(LIBDIR)/libfdr.a 
+
+all: $(EXECUTABLES)
+
+clean:
+	rm -f core *.o a.out simple* tt $(EXECUTABLES)
+
+.SUFFIXES: .c .o
+.c.o:
+	$(CC) $(CFLAGS) -c $*.c
+
+reason: reason.o parse.o util.o and_or_tree.o communicate.o
+	$(CC) $(CFLAGS) -o reason reason.o parse.o util.o and_or_tree.o communicate.o -lpthread $(LIBS)

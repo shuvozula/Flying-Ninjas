@@ -1,0 +1,19 @@
+CC = g++
+DIR = /home/ftang
+INCLUDES = $(DIR)/include
+CFLAGS = -g -I$(INCLUDES)
+LIBS = -L$(DIR)/lib
+EXECUTABLES = clear
+
+all: $(EXECUTABLES)
+
+clean:
+	rm -f core $(EXECUTABLES) *.o
+
+.SUFFIXES: .cc .o
+.cc.o:
+	$(CC) $(CFLAGS) -c *.cc
+
+clear: clear.o 
+	$(CC) $(CFLAGS) $(LIBS) -g -o clear clear.o communicate.o -lplayerclient -lpthread -lm -lplayerpacket
+
